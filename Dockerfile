@@ -21,7 +21,7 @@ WORKDIR /root/flowd-0.9.1
 
 RUN ./configure && make && make install
 
-RUN mkdir /var/empty && groupadd _flowd && useradd -g _flowd -c "flowd privsep" -d /var/empty _flowd
+RUN mkdir /var/empty && mkdir /var/log/flowd && groupadd _flowd && useradd -g _flowd -c "flowd privsep" -d /var/empty _flowd
 
 COPY flowd.conf /usr/local/etc/
 
